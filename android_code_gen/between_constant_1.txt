@@ -1,0 +1,19 @@
+    for (int i = 0; i <= numPoses_1 - 1; i++) {
+      numEr_1[i] = Math.exp(zPo_1[i]);
+      denomEr_1 = denomEr_1 + Math.exp(zPo_1[i]);
+
+
+    }
+    for (int i = 0; i <= numPoses_1 - 1; i++) {
+      softMax_1[i] = numEr_1[i] / denomEr_1;
+
+    }
+    int maxPos_1 = 0;
+    double maxSoftmax_1 = softMax_1[0];
+    for (int i = 1; i <= numPoses_1 - 1; i++) {
+      if (softMax_1[i] > maxSoftmax_1) {
+        maxSoftmax_1 = softMax_1[i];
+        maxPos_1 = i;
+      }
+
+    }

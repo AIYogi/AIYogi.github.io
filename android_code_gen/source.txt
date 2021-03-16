@@ -1,0 +1,423 @@
+/*
+ * Copyright 2020 Google LLC. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.mlkit.vision.demo.java.posedetector;
+
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.util.Log;
+import androidx.annotation.Nullable;
+import com.google.mlkit.vision.demo.
+        GraphicOverlay;
+import com.google.mlkit.vision.demo.GraphicOverlay.Graphic;
+import com.google.mlkit.vision.pose.Pose;
+import com.google.mlkit.vision.pose.PoseLandmark;
+import java.util.List;
+import java.util.Locale;
+
+
+
+/** Draw the detected pose in preview. */
+public class PoseGraphic extends Graphic {
+
+  private static final float DOT_RADIUS = 8.0f;
+  private static final float IN_FRAME_LIKELIHOOD_TEXT_SIZE = 30.0f;
+  private final Pose pose;
+  private final boolean showInFrameLikelihood;
+  private final Paint leftPaint;
+  private final Paint rightPaint;
+  private final Paint whitePaint;
+
+  PoseGraphic(GraphicOverlay overlay, Pose pose, boolean showInFrameLikelihood) {
+    super(overlay);
+
+    this.pose = pose;
+    this.showInFrameLikelihood = showInFrameLikelihood;
+
+    whitePaint = new Paint();
+    whitePaint.setColor(Color.WHITE);
+    whitePaint.setTextSize(IN_FRAME_LIKELIHOOD_TEXT_SIZE);
+    leftPaint = new Paint();
+    leftPaint.setColor(Color.GREEN
+    );
+    rightPaint = new Paint();
+    rightPaint.setColor(Color.YELLOW);
+  }
+
+  @Override
+  public void draw(Canvas canvas) {
+    List<PoseLandmark> landmarks = pose.getAllPoseLandmarks();
+    if (landmarks.isEmpty()) {
+      return;
+    }
+    // Draw all the points
+    for (PoseLandmark landmark : landmarks) {
+      drawPoint(canvas, landmark.getPosition(), whitePaint);
+      if (showInFrameLikelihood) {
+        canvas.drawText(
+                String.format(Locale.US, "%.2f", landmark.getInFrameLikelihood(
+                )),
+                translateX(landmark.getPosition().x),
+                translateY(landmark.getPosition().y),
+                whitePaint);
+      }
+    }
+    PoseLandmark leftShoulder = pose.getPoseLandmark(
+            PoseLandmark.LEFT_SHOULDER);
+    PoseLandmark rightShoulder = pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER);
+    PoseLandmark leftElbow = pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW);
+    PoseLandmark rightElbow = pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW);
+    PoseLandmark leftWrist = pose.getPoseLandmark(PoseLandmark.LEFT_WRIST);
+    PoseLandmark rightWrist = pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST);
+    PoseLandmark leftHip = pose.getPoseLandmark(PoseLandmark.LEFT_HIP);
+    PoseLandmark rightHip = pose.getPoseLandmark(PoseLandmark.RIGHT_HIP);
+    PoseLandmark leftKnee = pose.getPoseLandmark(PoseLandmark.LEFT_KNEE);
+    PoseLandmark rightKnee = pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE);
+    PoseLandmark leftAnkle = pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE);
+    PoseLandmark rightAnkle = pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE);
+
+    PoseLandmark leftPinky = pose.getPoseLandmark(PoseLandmark.LEFT_PINKY);
+    PoseLandmark rightPinky = pose.getPoseLandmark(PoseLandmark.RIGHT_PINKY);
+    PoseLandmark leftIndex = pose.getPoseLandmark(PoseLandmark.LEFT_INDEX);
+    PoseLandmark rightIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_INDEX);
+    PoseLandmark leftThumb = pose.getPoseLandmark(PoseLandmark.LEFT_THUMB);
+    PoseLandmark rightThumb = pose.getPoseLandmark(PoseLandmark.RIGHT_THUMB);
+    PoseLandmark leftHeel = pose.getPoseLandmark(PoseLandmark.LEFT_HEEL);
+    PoseLandmark rightHeel = pose.getPoseLandmark(PoseLandmark.RIGHT_HEEL);
+    PoseLandmark leftFootIndex = pose.getPoseLandmark(PoseLandmark.LEFT_FOOT_INDEX);
+    PoseLandmark rightFootIndex = pose.getPoseLandmark(PoseLandmark.RIGHT_FOOT_INDEX);
+    double righthip = getAngle(
+            pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_HIP),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE));
+    double rightknee = getAngle(
+            pose.getPoseLandmark(PoseLandmark.RIGHT_HIP),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_KNEE),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_ANKLE));
+    double leftknee = getAngle(
+            pose.getPoseLandmark(PoseLandmark.LEFT_HIP),
+            pose.getPoseLandmark(PoseLandmark.LEFT_KNEE),
+            pose.getPoseLandmark(PoseLandmark.LEFT_ANKLE));
+    double leftelbow = getAngle(
+            pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW),
+            pose.getPoseLandmark(PoseLandmark.LEFT_WRIST));
+    double rightelbow = getAngle(
+            pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_WRIST));
+    double lefthip = getAngle(
+            pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.LEFT_HIP),
+            pose.getPoseLandmark(PoseLandmark.LEFT_KNEE));
+    double leftshoulder = getAngle(
+            pose.getPoseLandmark(PoseLandmark.LEFT_ELBOW),
+            pose.getPoseLandmark(PoseLandmark.LEFT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.LEFT_HIP));
+    double rightshoulder = getAngle(
+            pose.getPoseLandmark(PoseLandmark.RIGHT_ELBOW),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_SHOULDER),
+            pose.getPoseLandmark(PoseLandmark.RIGHT_HIP));
+ 
+    Log.d("rightHipAngle => ", Double.valueOf(righthip).toString());
+    Log.d("rightkneeAngle => ", Double.valueOf(rightknee).toString());
+    Log.d("leftkneeAngle=> ", Double.valueOf(leftknee).toString());
+    Log.d("leftelbowAngle  => ", Double.valueOf(leftelbow).toString());
+    Log.d("RightelbowAngle  => ", Double.valueOf(rightelbow).toString());
+    Log.d("Lefthipangle  => ", Double.valueOf(lefthip).toString());
+    Log.d("leftshoulderangle  => ", Double.valueOf(leftshoulder).toString());
+    Log.d("rightshoulderangle  => ", Double.valueOf(rightshoulder).toString());
+
+
+    //Parameter definition
+    int numPoses = 10;
+    //Define the features array
+    double[] Features;
+    //Declare the features array
+    //Features = new double[8];
+    //Define trial set of Features (Boat chosen for reference)
+    //Features = new double[]{righthip, lefthip, rightelbow, leftelbow, rightknee, leftknee, rightshoulder, leftshoulder};
+      Features = new double[]{righthip, lefthip, rightelbow, leftelbow, rightknee, leftknee, rightshoulder, leftshoulder};
+
+      //Features = new double[]{43.34667507d,47.05595858d,43.34667507d,142.3389672d,168.0415926d,10.46603823d,54.8243765d,42.78103997d};
+    //Define trial set of Features (Bow chosen for reference)
+    //Features = new double[]{100.7468022d,107.9266013d,100.7468022d,169.8138723d,100.5559779d,84.52468342d,82.83820404d,89.41130784d};
+    //Define trial set of Features (Camel chosen for reference)
+    //Features = new double[]{87.72488059d,86.66112663d,87.72488059d,42.48518198d,127.4737749d,45.648273d,49.07353835d,47.22077994d};
+    //Define trial set of Features (Cat chosen for reference)
+    //Features = new double[]{74.13640285d,100.0295803d,74.13640285d,177.4309618d,139.3307355d,40.2247394d,99.72238489d,96.90069472d};
+    //Define the beta array
+    double[][] beta;
+    //Declare beta for 4 poses with 8 features each (no value for intercept)
+    beta = new double[numPoses][8];
+    //Manually input data from csv
+    double[] Boat;
+    double[] Bow;
+    double[] Camel;
+    double[] Cat;
+    double[] Chair;
+    double[] Child;
+    double[] Cobra;
+    double[] Cow;
+    double[] Crane;
+    double[] DolphinePlank;
+
+
+
+    //betaBoat = new double[]{-0.024446798d, 0.010530453d, -0.024446798d, 0.035196611d, 0.028304167d, -0.038208047d, 0.021196301d, -0.050576457d};
+    Bow = new double[]{-0.007448579d, 0.018768332d, -0.007448579d, 0.046137089d, -0.034538625d, 0.003081071d, 0.01282512d, -0.025040231d};
+    Camel = new double[]{-0.003415977d, 0.019153244d, -0.003415977d, 0.030297826d, -0.012425267d, -0.002342858d, 0.003850182d, -0.034207269d};
+    //betaCat = new double[]{-0.00474824d, -0.006936133d, -0.00474824d, 0.076988958d, -0.036352846d, -0.034145395d, 0.041731144d, -0.056597111d};
+    Boat= new double[]{-0.012872258d,-0.042057307d,-0.012872258d, 0.058134969d, 0.005466638d, -0.020296043d, -0.017415534d, -0.021119116d};
+    //Bow = new double[]{0.015288982d, -0.00040502d, 0.015288982d, 0.046332115d, -0.067868026d, -0.024719607d, 0.04928445d, -0.027510909d};
+    //Camel = new double[]{0.014034476d, 0.01569962d, 0.014034476d, 0.04516979d, -0.038636088d, -0.009086611d, 0.024068948d, -0.051641512d};
+    Chair = new double[]{0.029134168d, -0.035692522d, 0.029134168d, 0.05597978d, -0.091534217d, -0.059008372d, 0.09937279d, -0.029416639d};
+    Child = new double[]{-0.011263159d, -0.018640902d, -0.011263159d, -0.001809196d, -0.074579682d, 0.030955298d, 0.103064031d, -0.040913224d};
+    Cobra = new double[]{0.019341989d, 0.024182078d, 0.019341989d, 0.071017168d, -0.052678295d, -0.074067284d, 0.052332362d, -0.129271382d,};
+    Cat = new double[]{0.012516868d, -0.024498427d, 0.012516868d, 0.083224082d, -0.07074018d, -0.039906229d, 0.060046395d, -0.041863863d};
+    Cow = new double[]{0.0347848d, -0.005708422d, 0.0347848d, 0.063267493d, -0.088318922d, -0.038127015d, 0.064340352d, -0.080212799d};
+    Crane = new double[]{0.008688259d, -0.104008685d, 0.008688259d, 0.07510856d, -0.033457234d, 0.016449445d, 0.07092588d, -0.082181881d};
+    DolphinePlank = new double[]{0.025675781d, 0.016871473d, 0.025675781d, -0.005377972d, -0.034334966d, -0.048570624d, 0.031103846d, -0.023246816d};
+
+
+
+    //Densify the beta matrix
+
+    for (int i = 0; i <= Boat.length - 1; i++) //traversing the weights
+    {
+      beta[0][i] = Boat[i];
+      beta[1][i] = Bow[i];
+      beta[2][i] = Camel[i];
+      beta[3][i] = Chair[i];
+      beta[4][i] = Child[i];
+      beta[5][i] = Cobra[i];
+      beta[6][i] = Cat[i];
+      beta[7][i] = Cow[i];
+      beta[8][i] = Crane[i];
+      beta[9][i] = DolphinePlank[i];
+
+    }
+
+    //Calculating y value
+    double[] yPo;
+    yPo = new double[numPoses + 1];
+    //Add the 0 intercepts
+    /*
+    y[0] = beta[0][0];
+    y[1] = beta[1][0];
+    y[2] = beta[2][0];
+    y[3] = beta[3][0];
+    */
+    //Multiply features and add
+    for (int i = 0; i <= Boat.length - 1; i++) {
+      yPo[0] = yPo[0] + beta[0][i] * Features[i];
+      yPo[1] = yPo[1] + beta[1][i] * Features[i];
+      yPo[2] = yPo[2] + beta[2][i] * Features[i];
+      yPo[3] = yPo[3] + beta[3][i] * Features[i];
+      yPo[4] = yPo[4] + beta[4][i] * Features[i];
+      yPo[5] = yPo[5] + beta[5][i] * Features[i];
+      yPo[6] = yPo[6] + beta[6][i] * Features[i];
+      yPo[7] = yPo[7] + beta[7][i] * Features[i];
+      yPo[8] = yPo[8] + beta[8][i] * Features[i];
+      yPo[9] = yPo[9] + beta[9][i] * Features[i];
+    }
+
+
+    double[] zPo = new double[]{yPo[0], yPo[1], yPo[2], yPo[3],yPo[4],yPo[5],yPo[6],yPo[7],yPo[8],yPo[9]};
+    double[] numEr = new double[]{0.0d, 0.0d, 0.0d, 0.0d,0.0d,0.0d,0.0d,0.0d,0.0d,0.0d};
+    double denomEr = 0.0d;
+    double[] softMax = new double[]{0.0d, 0.0d, 0.0d, 0.0d,0.0d,0.0d,0.0d,0.0d,0.0d,0.0d};
+    for (int i = 0; i <= numPoses - 1; i++) {
+      numEr[i] = Math.exp(zPo[i]);
+      denomEr = denomEr + Math.exp(zPo[i]);
+
+
+    }
+    for (int i = 0; i <= numPoses - 1; i++) {
+      softMax[i] = numEr[i] / denomEr;
+
+    }
+    int maxPos = 0;
+    double maxSoftmax = softMax[0];
+    for (int i = 1; i <= numPoses - 1; i++) {
+      if (softMax[i] > maxSoftmax) {
+        maxSoftmax = softMax[i];
+        maxPos = i;
+      }
+
+    }
+
+    //String poseNamePred = "Blank";
+    String pose="no pose";
+    switch (maxPos + 1) {
+      case 1:
+        //poseNamePred = "boat";
+        pose="Boat";
+        Log.d("Posename", "This is Boat");
+        break;
+      case 2:
+        //poseNamePred = "bow";
+        pose="Bow";
+        Log.d("Posename", "This is Bow");
+        break;
+      case 3:
+        //poseNamePred = "camel";
+        pose="Camel";
+        Log.d("Posename", "This is Camel");
+        break;
+      case 4:
+        //poseNamePred = "cat";
+        pose="Chair";
+        Log.d("Posename", "This is Chair");
+        break;
+      case 5:
+        //poseNamePred = "cat";
+        pose="Child";
+        Log.d("Posename", "This is Child");
+        break;
+        case 6:
+        //poseNamePred = "cat";
+        pose="Cobra";
+        Log.d("Posename", "This is Cobra");
+        break;
+        case 7:
+        //poseNamePred = "cat";
+        pose="Cat";
+        Log.d("Posename", "This is Cat");
+        break;
+        case 8:
+        //poseNamePred = "cat";
+        pose="Cow";
+         Log.d("Posename", "This is Cow");
+         break;
+         case 9:
+        //poseNamePred = "cat";
+        pose="Crane";
+        Log.d("Posename", "This is Crane");
+        break;
+      case 10:
+        //poseNamePred = "cat";
+        pose="DolphinePlank";
+        Log.d("Posename", "This is DolphinePlank");
+        break;
+      default:
+        //poseNamePred = "Not Found";
+        pose="no pose";
+        Log.d("Posename", "NA");
+        break;
+    }
+
+//////////////////////////
+    ///////////////////////////////////////Printing results start
+
+    Paint paint=new Paint();
+
+    paint.setColor(Color.RED);
+    paint.setTextSize(40);
+    //canvas.drawText("Angle is:" + angle1, 10, 25, paint);
+    canvas.drawText("Posename:" + pose, 10, 65, paint);
+
+///////////////////////////////////////////
+///////////////////////////////////printing result send
+    //Log.d("anglerange  => ", Double.valueOf(angle1).toString());
+    //Log.d("posename  => ", Double.valueOf(poseNamePred).toString());
+
+
+    Log.d("leftShoulder => ", leftShoulder.getPosition().toString());
+    Log.d("rightShoulder => ", rightShoulder.getPosition().toString());
+    Log.d("leftElbow => ", leftElbow.getPosition().toString());
+    Log.d("rightElbow => ", rightElbow.getPosition().toString());
+    Log.d("leftWrist => ", leftWrist.getPosition().toString());
+    Log.d("rightWrist => ", rightWrist.getPosition().toString());
+    Log.d("leftHip => ", leftHip.getPosition().toString());
+    Log.d("rightHip => ", rightHip.getPosition().toString());
+    Log.d("leftKnee => ", leftKnee.getPosition().toString());
+    Log.d("rightKnee => ", rightKnee.getPosition().toString());
+    Log.d("leftAnkle => ", leftAnkle.getPosition().toString());
+    Log.d("rightAnkle => ", rightAnkle.getPosition().toString());
+    Log.d("leftPinky => ", leftPinky.getPosition().toString());
+    Log.d("rightPinky => ", rightPinky.getPosition().toString());
+    Log.d("leftIndex => ", leftIndex.getPosition().toString());
+    Log.d("rightIndex => ", rightIndex.getPosition().toString());
+    Log.d("leftThumb => ", leftThumb.getPosition().toString());
+    Log.d("rightThumb => ", rightThumb.getPosition().toString());
+    Log.d("leftHeel => ", leftHeel.getPosition().toString());
+    Log.d("rightHeel => ", rightHeel.getPosition().toString());
+    Log.d("leftFootIndex => ", leftFootIndex.getPosition().toString());
+    Log.d("rightFootIndex => ", rightFootIndex.getPosition().toString());
+
+    drawLine(canvas, leftShoulder.getPosition(), rightShoulder.getPosition(), whitePaint);
+    drawLine(canvas, leftHip.getPosition(), rightHip.getPosition(), whitePaint);
+
+    // Left body
+    drawLine(canvas, leftShoulder.getPosition(), leftElbow.getPosition(), leftPaint);
+    drawLine(canvas, leftElbow.getPosition(), leftWrist.getPosition(), leftPaint);
+    drawLine(canvas, leftShoulder.getPosition(), leftHip.getPosition(), leftPaint);
+    drawLine(canvas, leftHip.getPosition(), leftKnee.getPosition(), leftPaint);
+    drawLine(canvas, leftKnee.getPosition(), leftAnkle.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftThumb.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftPinky.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftIndex.getPosition(), leftPaint);
+    drawLine(canvas, leftAnkle.getPosition(), leftHeel.getPosition(), leftPaint);
+    drawLine(canvas, leftHeel.getPosition(), leftFootIndex.getPosition(), leftPaint);
+
+    // Right body
+    drawLine(canvas, rightShoulder.getPosition(), rightElbow.getPosition(), rightPaint);
+    drawLine(canvas, rightElbow.getPosition(), rightWrist.getPosition(), rightPaint);
+    drawLine(canvas, rightShoulder.getPosition(), rightHip.getPosition(), rightPaint);
+    drawLine(canvas, rightHip.getPosition(), rightKnee.getPosition(), rightPaint);
+    drawLine(canvas, rightKnee.getPosition(), rightAnkle.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightThumb.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightPinky.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightIndex.getPosition(), rightPaint);
+    drawLine(canvas, rightAnkle.getPosition(), rightHeel.getPosition(), rightPaint);
+    drawLine(canvas, rightHeel.getPosition(), rightFootIndex.getPosition(), rightPaint);
+  }
+
+
+  void drawPoint(Canvas canvas, @Nullable PointF point, Paint paint) {
+    if (point == null) {
+      return;
+    }
+    canvas.drawCircle(translateX(point.x), translateY(point.y), DOT_RADIUS, paint);
+  }
+
+  void drawLine(Canvas canvas, @Nullable PointF start, @Nullable PointF end, Paint paint) {
+    if (start == null || end == null) {
+      return;
+    }
+    canvas.drawLine(
+            translateX(start.x), translateY(start.y), translateX(end.x), translateY(end.y), paint);
+  }
+
+  // Find angles
+  static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+    double result =
+            Math.toDegrees(
+                    Math.atan2(lastPoint.getPosition().y - midPoint.getPosition().y,
+                            lastPoint.getPosition().x - midPoint.getPosition().x)
+                            - Math.atan2(firstPoint.getPosition().y - midPoint.getPosition().y,
+                            firstPoint.getPosition().x - midPoint.getPosition().x));
+    result = Math.abs(result); // Angle should never be negative
+    if (result > 180) {
+      result = (360.0 - result); // Always get the acute representation of the angle
+    }
+    return result;
+  }
+}
