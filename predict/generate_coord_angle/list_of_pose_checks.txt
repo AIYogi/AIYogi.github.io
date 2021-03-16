@@ -1,0 +1,35 @@
+//Firefly
+double eye_ankle = Math.abs(Math.max(Leye_Y,Reye_Y))-Math.abs(Math.max(LAnkle_Y,RAnkle_Y));
+      double eye_wrist = Math.abs(Math.max(Leye_Y,Reye_Y))-Math.abs(Math.max(LWrist_Y,RWrist_Y));
+        if(eye_ankle/eye_wrist<1){
+            pose="Sorted Firefly";
+        }
+        else{
+            System.out.println("ML detected Firefly; Failed consistency check");
+        }
+//Heron
+if ((Math.abs(Math.max(LKnee_X, Rknee_X)-((LElbow_X+RElbow_X)/2.0)))/(Math.max((-Lshoulder_Y+Lhip_Y),(-Rshoulder_Y+RHip_Y)))<0.625){
+        pose="Sorted_Heron";
+    }
+    else {
+        System.out.println("ML predicted Heron; But failed consistency");
+    }
+//Extended Puppy
+double wrist = Math.max(LWrist_Y,RWrist_Y);
+//System.out.println("wristY at "+wrist);
+double ankle = Math.max(LAnkle_Y,RAnkle_Y);
+//System.out.println("ankleY at "+ankle);
+double hip = Math.max(Lhip_Y,RHip_Y);
+//System.out.println("hipY at"+hip);
+double shoulder = Math.max(Lshoulder_Y,Rshoulder_Y);
+//System.out.println("ShoulderY at "+shoulder);
+double wrist_ankle  = Math.abs(wrist-ankle);
+double hip_shoulder = Math.abs(Math.max(Lhip_Y,RHip_Y)-Math.max(Lshoulder_Y,Rshoulder_Y)); 
+if(wrist_ankle/hip_shoulder<0.675){
+    //System.out.println("Wrist_Ankle"+wrist_ankle);
+    //System.out.println("Hip_shoulder"+hip_shoulder);
+  pose="Sorted Extended Puppy";
+}
+else{
+  System.out.println("ML detected Extended Puppy; Failed consistency check");
+}

@@ -1,0 +1,55 @@
+import java.lang.Math;
+class predict
+{
+    public static void main(String args[])
+    {
+        //Parameter definition
+        double beta[][];
+        double RHA[];
+        double LHA[];
+        double REA[];
+        double LEA[];
+        double RKA[];
+        double LKA[];
+        double RSA[];
+        double LSA[];
+        double Features[];
+        double[] yPo;
+        double denomEr = 0.0d;
+        double righthip;
+        double lefthip;
+        double rightelbow;
+        double leftelbow;
+        double rightknee;
+        double leftknee;
+        double rightshoulder;
+        double leftshoulder;
+        double RHip_X; double RHip_Y;
+        double Rknee_X; double Rknee_Y;
+        double RAnkle_X;  double RAnkle_Y;
+        double RElbow_X; double RElbow_Y;
+        double RWrist_X; double RWrist_Y;
+        double Lhip_X; double Lhip_Y;
+        double LKnee_X; double LKnee_Y;
+        double LAnkle_X; double LAnkle_Y;
+        double LElbow_X; double LElbow_Y;
+        double LWrist_X; double LWrist_Y;
+        double Rshoulder_X; double Rshoulder_Y;
+        double Lshoulder_X; double Lshoulder_Y;
+        double Reye_X; double Reye_Y;
+        double Leye_X; double Leye_Y;
+        double []A_RHip_X; double []A_RHip_Y;
+        double []A_Rknee_X; double []A_Rknee_Y;
+        double []A_RAnkle_X;  double []A_RAnkle_Y;
+        double []A_RElbow_X; double []A_RElbow_Y;
+        double []A_RWrist_X; double []A_RWrist_Y;
+        double []A_Lhip_X; double []A_Lhip_Y;
+        double []A_LKnee_X; double []A_LKnee_Y;
+        double []A_LAnkle_X; double []A_LAnkle_Y;
+        double []A_LElbow_X; double []A_LElbow_Y;
+        double []A_LWrist_X; double []A_LWrist_Y;
+        double []A_Rshoulder_X; double []A_Rshoulder_Y;
+        double []A_Lshoulder_X; double []A_Lshoulder_Y;
+        double []A_Reye_X; double []A_Reye_Y;
+        double []A_Leye_X; double []A_Leye_Y;
+                
