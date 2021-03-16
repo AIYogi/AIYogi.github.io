@@ -1,0 +1,464 @@
+RHip angles of 38.jpg:
+177.07109764736026
+Rknee angles of 38.jpg:
+167.33037183033292
+RElbow angles of 38.jpg:
+177.07109764736026
+Lhip angles of 38.jpg:
+88.57914197548895
+LKnee angles of 38.jpg:
+13.08049301906489
+LElbow angles of 38.jpg:
+168.16200587432087
+Rshoulder angles of 38.jpg:
+154.76561254930795
+Lshoulder angles of 38.jpg:
+162.93995254773054
+RHip angles of 65.jpg:
+85.88024004011585
+Rknee angles of 65.jpg:
+168.63651680267208
+RElbow angles of 65.jpg:
+85.88024004011585
+Lhip angles of 65.jpg:
+175.17739743164717
+LKnee angles of 65.jpg:
+4.048218301816469
+LElbow angles of 65.jpg:
+158.9583653487227
+Rshoulder angles of 65.jpg:
+173.3464392910756
+Lshoulder angles of 65.jpg:
+167.12354958167955
+RHip angles of 107.jpg:
+105.90768029829879
+Rknee angles of 107.jpg:
+164.1278524959128
+RElbow angles of 107.jpg:
+105.90768029829879
+Lhip angles of 107.jpg:
+157.90849025792642
+LKnee angles of 107.jpg:
+8.809011868080457
+LElbow angles of 107.jpg:
+170.1765696391954
+Rshoulder angles of 107.jpg:
+156.71564953872283
+Lshoulder angles of 107.jpg:
+162.23671627354403
+RHip angles of 120.jpg:
+156.51500808314466
+Rknee angles of 120.jpg:
+177.68148946384605
+RElbow angles of 120.jpg:
+156.51500808314466
+Lhip angles of 120.jpg:
+97.92041763224039
+LKnee angles of 120.jpg:
+17.097951741241143
+LElbow angles of 120.jpg:
+153.4811123356272
+Rshoulder angles of 120.jpg:
+22.70807169132495
+Lshoulder angles of 120.jpg:
+144.17092219206214
+RHip angles of 122.jpg:
+112.37012950135667
+Rknee angles of 122.jpg:
+169.83964715490117
+RElbow angles of 122.jpg:
+112.37012950135667
+Lhip angles of 122.jpg:
+146.24419359991722
+LKnee angles of 122.jpg:
+2.6615281868343357
+LElbow angles of 122.jpg:
+165.37383837131804
+Rshoulder angles of 122.jpg:
+152.00384574092428
+Lshoulder angles of 122.jpg:
+147.9833010055829
+RHip angles of 146.jpg:
+167.04452878952202
+Rknee angles of 146.jpg:
+167.511617367806
+RElbow angles of 146.jpg:
+167.04452878952202
+Lhip angles of 146.jpg:
+120.72001961540313
+LKnee angles of 146.jpg:
+8.8662719138661
+LElbow angles of 146.jpg:
+168.1412647579824
+Rshoulder angles of 146.jpg:
+143.57589874453666
+Lshoulder angles of 146.jpg:
+144.92138937555032
+RHip angles of 151.jpg:
+172.68425557556856
+Rknee angles of 151.jpg:
+157.4788255109901
+RElbow angles of 151.jpg:
+172.68425557556856
+Lhip angles of 151.jpg:
+91.1809575472905
+LKnee angles of 151.jpg:
+24.471960968802666
+LElbow angles of 151.jpg:
+176.1968001977596
+Rshoulder angles of 151.jpg:
+155.78502409944738
+Lshoulder angles of 151.jpg:
+160.82848090599765
+RHip angles of 157.jpg:
+52.50991514240949
+Rknee angles of 157.jpg:
+158.5933386345758
+RElbow angles of 157.jpg:
+52.50991514240949
+Lhip angles of 157.jpg:
+32.31090923058205
+LKnee angles of 157.jpg:
+19.174053490101613
+LElbow angles of 157.jpg:
+176.68422870786415
+Rshoulder angles of 157.jpg:
+136.1725899393002
+Lshoulder angles of 157.jpg:
+143.78874687112457
+RHip angles of 183.jpg:
+105.24050318862129
+Rknee angles of 183.jpg:
+177.36106420406196
+RElbow angles of 183.jpg:
+105.24050318862129
+Lhip angles of 183.jpg:
+177.11765255191642
+LKnee angles of 183.jpg:
+26.01805019721998
+LElbow angles of 183.jpg:
+168.3400540916045
+Rshoulder angles of 183.jpg:
+177.16468578100705
+Lshoulder angles of 183.jpg:
+172.75893712831933
+RHip angles of 221.jpg:
+112.48547332341401
+Rknee angles of 221.jpg:
+176.3937513379883
+RElbow angles of 221.jpg:
+112.48547332341401
+Lhip angles of 221.jpg:
+162.56293391147508
+LKnee angles of 221.jpg:
+5.083812021084154
+LElbow angles of 221.jpg:
+160.72958614317469
+Rshoulder angles of 221.jpg:
+164.54038335912622
+Lshoulder angles of 221.jpg:
+153.82246024131155
+RHip angles of 231.jpg:
+171.84020980605507
+Rknee angles of 231.jpg:
+157.93938743314808
+RElbow angles of 231.jpg:
+171.84020980605507
+Lhip angles of 231.jpg:
+102.69751679840898
+LKnee angles of 231.jpg:
+11.008613638049013
+LElbow angles of 231.jpg:
+167.38811823871526
+Rshoulder angles of 231.jpg:
+154.2993922475951
+Lshoulder angles of 231.jpg:
+155.77146559469483
+RHip angles of 242.jpg:
+110.02947049473129
+Rknee angles of 242.jpg:
+162.91362455437917
+RElbow angles of 242.jpg:
+110.02947049473129
+Lhip angles of 242.jpg:
+154.02923241095735
+LKnee angles of 242.jpg:
+4.595939764983918
+LElbow angles of 242.jpg:
+166.1074119175675
+Rshoulder angles of 242.jpg:
+168.955240431395
+Lshoulder angles of 242.jpg:
+160.49746626838015
+RHip angles of 244.jpg:
+94.4997471690542
+Rknee angles of 244.jpg:
+169.83534281920745
+RElbow angles of 244.jpg:
+94.4997471690542
+Lhip angles of 244.jpg:
+175.96995672784476
+LKnee angles of 244.jpg:
+9.366718398960566
+LElbow angles of 244.jpg:
+173.268677630895
+Rshoulder angles of 244.jpg:
+173.97565761581387
+Lshoulder angles of 244.jpg:
+167.02247223858072
+RHip angles of 251.jpg:
+156.71113087773284
+Rknee angles of 251.jpg:
+171.0386249138966
+RElbow angles of 251.jpg:
+156.71113087773284
+Lhip angles of 251.jpg:
+110.94426485916365
+LKnee angles of 251.jpg:
+3.7248757534330967
+LElbow angles of 251.jpg:
+162.58918056619135
+Rshoulder angles of 251.jpg:
+140.08590734174746
+Lshoulder angles of 251.jpg:
+149.34632340240051
+RHip angles of 279.jpg:
+98.57438049183659
+Rknee angles of 279.jpg:
+165.83994142312145
+RElbow angles of 279.jpg:
+98.57438049183659
+Lhip angles of 279.jpg:
+153.32696006859967
+LKnee angles of 279.jpg:
+0.19363109391149463
+LElbow angles of 279.jpg:
+156.7096370651229
+Rshoulder angles of 279.jpg:
+172.80976890227342
+Lshoulder angles of 279.jpg:
+155.42604248900122
+RHip angles of 280.jpg:
+104.80588237380833
+Rknee angles of 280.jpg:
+177.4058795948177
+RElbow angles of 280.jpg:
+104.80588237380833
+Lhip angles of 280.jpg:
+179.72929909087807
+LKnee angles of 280.jpg:
+18.353479769386205
+LElbow angles of 280.jpg:
+165.15174660485573
+Rshoulder angles of 280.jpg:
+155.69575709040888
+Lshoulder angles of 280.jpg:
+138.35411092322948
+RHip angles of 290.jpg:
+104.72813974425851
+Rknee angles of 290.jpg:
+176.06878275741477
+RElbow angles of 290.jpg:
+104.72813974425851
+Lhip angles of 290.jpg:
+162.68864899313743
+LKnee angles of 290.jpg:
+10.148920311066247
+LElbow angles of 290.jpg:
+163.38819846941763
+Rshoulder angles of 290.jpg:
+152.85620118296197
+Lshoulder angles of 290.jpg:
+150.30552156301042
+RHip angles of 296.jpg:
+165.4833897524024
+Rknee angles of 296.jpg:
+169.74883906620158
+RElbow angles of 296.jpg:
+165.4833897524024
+Lhip angles of 296.jpg:
+108.01041062452121
+LKnee angles of 296.jpg:
+1.0558637782384386
+LElbow angles of 296.jpg:
+168.1520897391494
+Rshoulder angles of 296.jpg:
+146.76205425081977
+Lshoulder angles of 296.jpg:
+148.85448416701624
+RHip angles of 304.jpg:
+102.68845562845132
+Rknee angles of 304.jpg:
+178.09706938227765
+RElbow angles of 304.jpg:
+102.68845562845132
+Lhip angles of 304.jpg:
+169.9856801565945
+LKnee angles of 304.jpg:
+11.272396959883883
+LElbow angles of 304.jpg:
+169.43094619230726
+Rshoulder angles of 304.jpg:
+159.05666759231258
+Lshoulder angles of 304.jpg:
+151.41164092304825
+RHip angles of 316.jpg:
+106.86258631710467
+Rknee angles of 316.jpg:
+167.21112618855344
+RElbow angles of 316.jpg:
+106.86258631710467
+Lhip angles of 316.jpg:
+155.17409411449268
+LKnee angles of 316.jpg:
+0.12326536893447619
+LElbow angles of 316.jpg:
+160.30089829662273
+Rshoulder angles of 316.jpg:
+155.56592275731023
+Lshoulder angles of 316.jpg:
+148.49930627400605
+RHip angles of 319.jpg:
+165.5390342623305
+Rknee angles of 319.jpg:
+157.13414650929923
+RElbow angles of 319.jpg:
+165.5390342623305
+Lhip angles of 319.jpg:
+115.62813894087013
+LKnee angles of 319.jpg:
+17.58885405318544
+LElbow angles of 319.jpg:
+166.12488215029774
+Rshoulder angles of 319.jpg:
+132.1177232907479
+Lshoulder angles of 319.jpg:
+134.04033453531238
+RHip angles of 331.jpg:
+108.61391683820011
+Rknee angles of 331.jpg:
+168.4034030406167
+RElbow angles of 331.jpg:
+108.61391683820011
+Lhip angles of 331.jpg:
+178.85298261140392
+LKnee angles of 331.jpg:
+25.719751571434433
+LElbow angles of 331.jpg:
+171.11585708840255
+Rshoulder angles of 331.jpg:
+156.34953679484963
+Lshoulder angles of 331.jpg:
+153.84229706505965
+RHip angles of 332.jpg:
+106.43951352809631
+Rknee angles of 332.jpg:
+148.0258099855729
+RElbow angles of 332.jpg:
+106.43951352809631
+Lhip angles of 332.jpg:
+157.38723431225483
+LKnee angles of 332.jpg:
+6.383508100687548
+LElbow angles of 332.jpg:
+166.50004734088103
+Rshoulder angles of 332.jpg:
+162.96191552847841
+Lshoulder angles of 332.jpg:
+155.2269072701234
+RHip angles of 342.jpg:
+89.52083877051132
+Rknee angles of 342.jpg:
+177.93131264823302
+RElbow angles of 342.jpg:
+89.52083877051132
+Lhip angles of 342.jpg:
+167.89132820641586
+LKnee angles of 342.jpg:
+14.254597886271213
+LElbow angles of 342.jpg:
+169.2889146726719
+Rshoulder angles of 342.jpg:
+162.40361762058436
+Lshoulder angles of 342.jpg:
+171.70660938736413
+RHip angles of 349.jpg:
+111.04011637603136
+Rknee angles of 349.jpg:
+174.84081704251005
+RElbow angles of 349.jpg:
+111.04011637603136
+Lhip angles of 349.jpg:
+159.23237118183707
+LKnee angles of 349.jpg:
+4.205471989117372
+LElbow angles of 349.jpg:
+167.71289201899944
+Rshoulder angles of 349.jpg:
+160.7655746261204
+Lshoulder angles of 349.jpg:
+153.98252911113696
+RHip angles of 350.jpg:
+100.41344542328751
+Rknee angles of 350.jpg:
+170.03617284095853
+RElbow angles of 350.jpg:
+100.41344542328751
+Lhip angles of 350.jpg:
+167.38756015523813
+LKnee angles of 350.jpg:
+6.841395732822716
+LElbow angles of 350.jpg:
+159.09924936109635
+Rshoulder angles of 350.jpg:
+166.85950598900473
+Lshoulder angles of 350.jpg:
+157.12960204292926
+RHip angles of 353.jpg:
+93.96311600530483
+Rknee angles of 353.jpg:
+176.0598259252681
+RElbow angles of 353.jpg:
+93.96311600530483
+Lhip angles of 353.jpg:
+161.16945047642167
+LKnee angles of 353.jpg:
+14.534451434396594
+LElbow angles of 353.jpg:
+166.61077278107092
+Rshoulder angles of 353.jpg:
+176.80627475255392
+Lshoulder angles of 353.jpg:
+165.21711081970236
+RHip angles of 359.jpg:
+98.87837409147303
+Rknee angles of 359.jpg:
+179.81369441295746
+RElbow angles of 359.jpg:
+98.87837409147303
+Lhip angles of 359.jpg:
+174.6259463568767
+LKnee angles of 359.jpg:
+5.572871065233347
+LElbow angles of 359.jpg:
+167.46765559399026
+Rshoulder angles of 359.jpg:
+172.2947272879934
+Lshoulder angles of 359.jpg:
+165.210971175218
+RHip angles of 363.jpg:
+178.42171925232367
+Rknee angles of 363.jpg:
+152.29667624362307
+RElbow angles of 363.jpg:
+178.42171925232367
+Lhip angles of 363.jpg:
+101.1710556771169
+LKnee angles of 363.jpg:
+9.036692861209133
+LElbow angles of 363.jpg:
+166.01863704696038
+Rshoulder angles of 363.jpg:
+160.4376571478294
+Lshoulder angles of 363.jpg:
+159.19121875210885

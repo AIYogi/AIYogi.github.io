@@ -1,0 +1,128 @@
+RHip angles of 1.jpg:
+59.45885798065373
+Rknee angles of 1.jpg:
+170.73372709130658
+RElbow angles of 1.jpg:
+59.45885798065373
+Lhip angles of 1.jpg:
+140.65622076633113
+LKnee angles of 1.jpg:
+71.3971435525772
+LElbow angles of 1.jpg:
+25.40491892679928
+Rshoulder angles of 1.jpg:
+90.61739981576918
+Lshoulder angles of 1.jpg:
+123.71403030996024
+RHip angles of 26.jpg:
+52.57090825740089
+Rknee angles of 26.jpg:
+174.9278431254601
+RElbow angles of 26.jpg:
+52.57090825740089
+Lhip angles of 26.jpg:
+54.581507069525976
+LKnee angles of 26.jpg:
+143.80960190667645
+LElbow angles of 26.jpg:
+1.17557348333347
+Rshoulder angles of 26.jpg:
+103.03728622184482
+Lshoulder angles of 26.jpg:
+63.519247916462994
+RHip angles of 43.jpg:
+76.86344178046477
+Rknee angles of 43.jpg:
+117.41239978704155
+RElbow angles of 43.jpg:
+76.86344178046477
+Lhip angles of 43.jpg:
+83.59077882487576
+LKnee angles of 43.jpg:
+68.149855061997
+LElbow angles of 43.jpg:
+165.37438891678426
+Rshoulder angles of 43.jpg:
+83.53219687476442
+Lshoulder angles of 43.jpg:
+94.39222879024345
+RHip angles of 47.jpg:
+69.63022397222103
+Rknee angles of 47.jpg:
+171.4568068398741
+RElbow angles of 47.jpg:
+69.63022397222103
+Lhip angles of 47.jpg:
+41.64628625187575
+LKnee angles of 47.jpg:
+162.2911893115602
+LElbow angles of 47.jpg:
+13.712968283380482
+Rshoulder angles of 47.jpg:
+70.79859494502342
+Lshoulder angles of 47.jpg:
+82.10799880020552
+RHip angles of 68.jpg:
+62.964111597996656
+Rknee angles of 68.jpg:
+5.79966247067225
+RElbow angles of 68.jpg:
+62.964111597996656
+Lhip angles of 68.jpg:
+17.823919599612175
+LKnee angles of 68.jpg:
+147.13088678626357
+LElbow angles of 68.jpg:
+9.39806403028524
+Rshoulder angles of 68.jpg:
+62.34571798533513
+Lshoulder angles of 68.jpg:
+102.20665899350918
+RHip angles of Archer's pose_1.jpg:
+65.7901403926984
+Rknee angles of Archer's pose_1.jpg:
+170.20959043217965
+RElbow angles of Archer's pose_1.jpg:
+65.7901403926984
+Lhip angles of Archer's pose_1.jpg:
+5.2911687970386785
+LKnee angles of Archer's pose_1.jpg:
+101.80519672332903
+LElbow angles of Archer's pose_1.jpg:
+26.17311336900192
+Rshoulder angles of Archer's pose_1.jpg:
+72.94586856453634
+Lshoulder angles of Archer's pose_1.jpg:
+122.04740064954976
+RHip angles of New.jpg:
+81.53508500685213
+Rknee angles of New.jpg:
+171.77296609666163
+RElbow angles of New.jpg:
+81.53508500685213
+Lhip angles of New.jpg:
+18.099870933319824
+LKnee angles of New.jpg:
+143.15500937443335
+LElbow angles of New.jpg:
+3.6691002729386484
+Rshoulder angles of New.jpg:
+54.25716367334917
+Lshoulder angles of New.jpg:
+112.22128443719929
+RHip angles of New_2.jpg:
+18.104506234885108
+Rknee angles of New_2.jpg:
+101.14791376133462
+RElbow angles of New_2.jpg:
+18.104506234885108
+Lhip angles of New_2.jpg:
+23.860106903711785
+LKnee angles of New_2.jpg:
+165.4062671078276
+LElbow angles of New_2.jpg:
+25.884364223900743
+Rshoulder angles of New_2.jpg:
+53.76362187426908
+Lshoulder angles of New_2.jpg:
+137.24677817715468
