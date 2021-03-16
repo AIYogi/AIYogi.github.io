@@ -1,0 +1,27 @@
+import java.lang.Math;
+class predict
+{
+    public static void main(String args[])
+    {
+        //Parameter definition
+        double beta[][];
+        double RHA[];
+        double LHA[];
+        double REA[];
+        double LEA[];
+        double RKA[];
+        double LKA[];
+        double RSA[];
+        double LSA[];
+        double Features[];
+        double[] yPo;
+        double denomEr = 0.0d;
+        double righthip;
+        double lefthip;
+        double rightelbow;
+        double leftelbow;
+        double rightknee;
+        double leftknee;
+        double rightshoulder;
+        double leftshoulder;
+        

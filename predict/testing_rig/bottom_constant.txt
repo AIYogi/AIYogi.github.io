@@ -1,0 +1,99 @@
+//////////////////////////
+    ///////////////////////////////////////Printing results start
+
+    Paint paint=new Paint();
+
+    paint.setColor(Color.RED);
+    paint.setTextSize(40);
+    canvas.drawText("Pose_class is:" + pose_1, 10, 25, paint);
+    canvas.drawText("Posename:" + pose, 10, 65, paint);
+    
+
+///////////////////////////////////////////
+///////////////////////////////////printing result send
+    //Log.d("anglerange  => ", Double.valueOf(angle1).toString());
+    //Log.d("posename  => ", Double.valueOf(poseNamePred).toString());
+
+
+    Log.d("leftShoulder => ", leftShoulder.getPosition().toString());
+    Log.d("rightShoulder => ", rightShoulder.getPosition().toString());
+    Log.d("leftElbow => ", leftElbow.getPosition().toString());
+    Log.d("rightElbow => ", rightElbow.getPosition().toString());
+    Log.d("leftWrist => ", leftWrist.getPosition().toString());
+    Log.d("rightWrist => ", rightWrist.getPosition().toString());
+    Log.d("leftHip => ", leftHip.getPosition().toString());
+    Log.d("rightHip => ", rightHip.getPosition().toString());
+    Log.d("leftKnee => ", leftKnee.getPosition().toString());
+    Log.d("rightKnee => ", rightKnee.getPosition().toString());
+    Log.d("leftAnkle => ", leftAnkle.getPosition().toString());
+    Log.d("rightAnkle => ", rightAnkle.getPosition().toString());
+    Log.d("leftPinky => ", leftPinky.getPosition().toString());
+    Log.d("rightPinky => ", rightPinky.getPosition().toString());
+    Log.d("leftIndex => ", leftIndex.getPosition().toString());
+    Log.d("rightIndex => ", rightIndex.getPosition().toString());
+    Log.d("leftThumb => ", leftThumb.getPosition().toString());
+    Log.d("rightThumb => ", rightThumb.getPosition().toString());
+    Log.d("leftHeel => ", leftHeel.getPosition().toString());
+    Log.d("rightHeel => ", rightHeel.getPosition().toString());
+    Log.d("leftFootIndex => ", leftFootIndex.getPosition().toString());
+    Log.d("rightFootIndex => ", rightFootIndex.getPosition().toString());
+
+    drawLine(canvas, leftShoulder.getPosition(), rightShoulder.getPosition(), whitePaint);
+    drawLine(canvas, leftHip.getPosition(), rightHip.getPosition(), whitePaint);
+
+    // Left body
+    drawLine(canvas, leftShoulder.getPosition(), leftElbow.getPosition(), leftPaint);
+    drawLine(canvas, leftElbow.getPosition(), leftWrist.getPosition(), leftPaint);
+    drawLine(canvas, leftShoulder.getPosition(), leftHip.getPosition(), leftPaint);
+    drawLine(canvas, leftHip.getPosition(), leftKnee.getPosition(), leftPaint);
+    drawLine(canvas, leftKnee.getPosition(), leftAnkle.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftThumb.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftPinky.getPosition(), leftPaint);
+    drawLine(canvas, leftWrist.getPosition(), leftIndex.getPosition(), leftPaint);
+    drawLine(canvas, leftAnkle.getPosition(), leftHeel.getPosition(), leftPaint);
+    drawLine(canvas, leftHeel.getPosition(), leftFootIndex.getPosition(), leftPaint);
+
+    // Right body
+    drawLine(canvas, rightShoulder.getPosition(), rightElbow.getPosition(), rightPaint);
+    drawLine(canvas, rightElbow.getPosition(), rightWrist.getPosition(), rightPaint);
+    drawLine(canvas, rightShoulder.getPosition(), rightHip.getPosition(), rightPaint);
+    drawLine(canvas, rightHip.getPosition(), rightKnee.getPosition(), rightPaint);
+    drawLine(canvas, rightKnee.getPosition(), rightAnkle.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightThumb.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightPinky.getPosition(), rightPaint);
+    drawLine(canvas, rightWrist.getPosition(), rightIndex.getPosition(), rightPaint);
+    drawLine(canvas, rightAnkle.getPosition(), rightHeel.getPosition(), rightPaint);
+    drawLine(canvas, rightHeel.getPosition(), rightFootIndex.getPosition(), rightPaint);
+  }
+
+
+  void drawPoint(Canvas canvas, @Nullable PointF point, Paint paint) {
+    if (point == null) {
+      return;
+    }
+    canvas.drawCircle(translateX(point.x), translateY(point.y), DOT_RADIUS, paint);
+  }
+
+  void drawLine(Canvas canvas, @Nullable PointF start, @Nullable PointF end, Paint paint) {
+    if (start == null || end == null) {
+      return;
+    }
+    canvas.drawLine(
+            translateX(start.x), translateY(start.y), translateX(end.x), translateY(end.y), paint);
+  }
+
+  // Find angles
+  static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+    double result =
+            Math.toDegrees(
+                    Math.atan2(lastPoint.getPosition().y - midPoint.getPosition().y,
+                            lastPoint.getPosition().x - midPoint.getPosition().x)
+                            - Math.atan2(firstPoint.getPosition().y - midPoint.getPosition().y,
+                            firstPoint.getPosition().x - midPoint.getPosition().x));
+    result = Math.abs(result); // Angle should never be negative
+    if (result > 180) {
+      result = (360.0 - result); // Always get the acute representation of the angle
+    }
+    return result;
+  }
+}
